@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+
+    <head>
+        <title>Le code secret</title>   
+    </head>
+
+    <body>
+        <h1>Bonjour et bienvenus !</h1>
+        <h2>Le code secret</h2>
+        <p>Ce jeu se joue entre deux joueurs ! Le joueur 1 choisis un nombre que le joueur 2 devra deviner. </p>
+        
+        <p>Nombre de tentatives du Joueur 2 : <em id = "nombreDeTentatives"></em></p>
+
+        <div id = "gamePlay">
+        <form method = "get" action ="">
+            <label for="secretCode">Joueur 1 : Déterminez votre code secret
+                <input type = "button"
+                value = "Code Secret"
+                onclick="chooseANumberJ1()">
+            </label>
+            <br>
+            <br>
+            <label for="givenNumber">Joueur 2 : Entrez le code secret compris de 1 : 
+                <input type="number" 
+                id="givenNumber" 
+                min="1" max="50"/> 
+                à 50  </label>
+
+            <input type = "button"
+            value = "Soumettre"
+            onclick="didIWin();">
+
+        </form>
+        </div>
+    </body>
+
+    <script>  
+    
+    // je vais fractionner mes fonctions 
+    // Il me faut une fonction pour retourner le secretCode défini par le J1
+    // Il me faut une fonction pour retourner le givenNumber défini par le J2
+    // Il me faut une fonction qui compare le givenNumber au secretCode et qui alerte le J2 pour l'orienter.
+    // Cette fonction devra également afficher si le J2 à gagner. 
+    // Il n'y a plus besoin de fonction gamePlay car les joueurs vont eux même lancer la première et la troisième fonction.
+    // 
+
+        let secretCode = 0
+        let tentative = 0
+
+        function chooseANumberJ1(){
+            while(secretCode < 1 || secretCode > 50){
+                secretCode = window.prompt("Joueur 1 : Choisis un nombre compris entre 1 et 50 pour le faire deviner au joueur 2")
+            }
+            return secretCode
+        }
+
+
+        function didIWin(){
+            tentative++
+            let givenNumber = document.getElementById("givenNumber").value;
+            if(givenNumber>secretCode){
+                alert("Ton nombre est plus grand que le code secret !");
+            }else if(givenNumber<secretCode){
+                alert("Ton nombre est plus petit que le code secret !");
+            }else if(givenNumber == secretCode){
+                document.getElementById("gamePlay").innerHTML = "Félicitations Joueur 2 ! le code secret était bien " + secretCode + "."
+            }
+            document.getElementById("nombreDeTentatives").innerHTML = tentative
+        }
+
+
+        
+    
+    </script>
+
+
+</html>

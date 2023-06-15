@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<h1>Bonjour et bienvenu !</h1>
+<h2>Le code secret</h2>
+<h3>Devine le code secret ! Pour cela, nous allons t'indiquer ci dessous si le nombre que tu as choisi est inférieur, supérieur, ou égal au code secret. Le but est de trouver le code avec le moins de tentatives possible !</h3>
+<p id = "info"></p>
+</body>
+
+<script>
+
+let givenNumber
+
+function didIWin(givenNumber){
+    if(givenNumber>22){;
+        alert("Ton nombre est plus grand que le code secret !");
+    }else if(givenNumber<22){;
+        alert("Ton nombre est plus petit que le code secret !");
+    }
+    console.log(givenNumber ==22)
+    return givenNumber == 22;
+}
+
+function gamePlay(){
+    while(!didIWin(givenNumber)){
+        givenNumber = window.prompt("Choisissez un nombre compris entre 1 et 50", "1, 2, 3... 48, 49, 50...");
+    }
+}
+
+gamePlay()
+
+document.body.innerHTML += "Félicitations, tu as découvert le code secret !";
+
+
+
+
+
+</script>
+
+</html>

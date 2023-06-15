@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+<head>
+    <title>Le code secret</title>   
+</head>
+
+<body>
+    <h1>Bonjour et bienvenus !</h1>
+    <h2>Le code secret</h2>
+    <p>Ce jeu se joue entre deux joueurs ! Le joueur 1 choisis un nombre que le joueur 2 devra deviner. </p>
+
+<button onclick="setSecretCode()">Définir le code secret</button>
+<br>
+<input type="text" id="guessInput" placeholder="Devinez le code">
+<button onclick="checkGuess()">Vérifier</button>
+
+</body>
+
+<script>
+let secretCode;
+
+function setSecretCode() {
+  secretCode = prompt("Entrez le code secret :");
+}
+
+function checkGuess() {
+  let guess = document.getElementById("guessInput").value;
+  
+  if (guess === secretCode) {
+    alert("Bravo ! Vous avez deviné le code secret !");
+  } else {
+    alert("Désolé, ce n'est pas le bon code.");
+  }
+}
+</script>
+
+
+</html>

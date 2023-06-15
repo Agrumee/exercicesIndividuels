@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<h1>Bonjour et bienvenu !</h1>
+<h2>Le code secret</h2>
+<h3>Ce jeu se joue entre deux joueurs ! Le joueur 1 choisis un nombre que le joueur 2 devra deviner. </h3>
+</body>
+
+<script>
+// je crée une fonction qui demande à Player 1 de choisir un nombre de 1 à 50.
+
+
+function chooseANumber(){
+    let secretCode = 899
+    while(secretCode < 1 || secretCode > 50){
+        secretCode = window.prompt("Joueur 1 : Choisis un nombre compris entre 1 et 50 pour le faire deviner au joueur 2")
+    }
+    return secretCode
+}
+
+
+function didIWin(givenNumber, secretCode){
+    if(givenNumber>secretCode){;
+        alert("Ton nombre est plus grand que le code secret !");
+    }else if(givenNumber<secretCode){;
+        alert("Ton nombre est plus petit que le code secret !");
+    }
+    return givenNumber == secretCode;  
+}
+
+
+function gamePlay(){
+    let secretCode = chooseANumber();
+    let givenNumber
+    while(!didIWin(givenNumber, secretCode)){
+        givenNumber = window.prompt("Joueur 2 : à ton tour de deviner le code secret ! Choisis un nombre compris de 1 à 50", "1, 2, 3... 48, 49, 50...");
+    }
+}
+
+gamePlay()
+
+document.body.innerHTML += "Félicitations, tu as découvert le code secret !";
+
+</script>
+</html>
+

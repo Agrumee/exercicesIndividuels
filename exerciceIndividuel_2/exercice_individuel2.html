@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<h1>Bonjour et bienvenu !</h1>
+<h2>Le code secret</h2>
+<h3>Devine le code secret ! Pour cela, nous allons t'indiquer ci dessous si le nombre que tu as choisi est inférieur, supérieur, ou égal au code secret. Le but est de trouver le code avec le moins de tentatives possible !</h3>
+<p id = "info"></p>
+</body>
+
+<script>
+
+function didIWin(givenNumber){
+    if (givenNumber == 22){
+        document.body.innerHTML += "Félicitations, tu as découvert le code secret !"
+    }
+    else if(givenNumber>22){;
+        alert("Ton nombre est plus grand que le code secret !");
+    }else if(givenNumber<22){;
+        alert("Ton nombre est plus petit que le code secret !");
+    }
+    
+}
+
+function gamePlay(){
+    let givenNumber
+    while(givenNumber != 22){
+    givenNumber = window.prompt("Choisissez un nombre compris entre 1 et 50", "1, 2, 3... 48, 49, 50...")
+    didIWin(givenNumber)
+}
+}
+
+gamePlay()
+
+
+// // je souhaite répéter ma fonction jusqu'à ce que l'utilisateur obtienne les félicitations.
+// // Il faudrait utiliser une boucle qui se répète jusqu'à ce que "givenNumber == 22"
+// // Une boucle While permet de vérifier une condition avant d'executer une boucle, cela me paraît être la meilleure option.
+// function gamePlay(){
+// while(givenNumber == 22){
+// didIWin(givenNumber)
+// }
+// }
+
+// gamePlay();
+
+</script>
+
+</html>
