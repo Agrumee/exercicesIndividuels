@@ -59,7 +59,6 @@
 
         function didIWin(){
             tentative++
-            document.getElementById("nombreDeTentatives").innerHTML = tentative
             let givenNumber = document.getElementById("givenNumber").value;
             if(givenNumber>secretCode){
                 alert("Ton nombre est plus grand que le code secret !");
@@ -70,6 +69,8 @@
             }else if(givenNumber == secretCode){
                 document.getElementById("gamePlay").innerHTML = "Félicitations Joueur 2 ! le code secret était bien " + secretCode + "."
             }
+            
+            document.getElementById("nombreDeTentatives").innerHTML = tentative
         }
 
 
