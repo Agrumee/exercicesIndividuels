@@ -9,7 +9,7 @@
     let tentative = 0
 
     function chooseANumberJ1(){
-        while(secretCode < 1 || secretCode > 50){
+        while(secretCode < 1 || secretCode > 9999){
             secretCode = window.prompt("Joueur 1 : Choisis un nombre compris entre 1 et 50 pour le faire deviner au joueur 2")
         }
         return secretCode
@@ -27,7 +27,8 @@
             alert("Ton nombre est plus petit que le code secret !");
             document.getElementById("min").innerHTML = givenNumber
         }else if(givenNumber == secretCode){
-            document.getElementById("gamePlay").innerHTML = "Félicitations Joueur 2 ! le code secret était bien " + secretCode + "."
+            document.getElementById("gamePlay").innerHTML = "Félicitations Enquêteur.ice ! le code secret était bien " + secretCode + 
+            ". Maintenant, rendez-vous sur le lieu indiqué sur la carte : " + '<br> <img src="Félicitations.png">';
         }
     }
 

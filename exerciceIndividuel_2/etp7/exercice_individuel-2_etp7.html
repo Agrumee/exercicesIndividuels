@@ -8,12 +8,25 @@
 </head>
 
 <body>
-    <h1>Bonjour et bienvenue !</h1>
-    <h2>Le code secret</h2>
-    <p>Ce jeu se joue entre deux joueurs ! Le joueur 1 choisis un nombre que le joueur 2 devra deviner. </p>
+    <h1>Le code secret</h1>
+    <h2>Nous avons besoin de vous !</h2>
+    <p class = "Règles">Nous enquêtons depuis des jours sur un.e mystérieux.se poseur.se de bombes qui a déjà sévi à deux reprises.
+        <br>
+        Le.la poseur.se de bombes nous a transmis une malette afin de nous mener au lieu où il.elle prévoit de faire exploser sa prochaine bombe. 
+        <br>
+        Vous êtes notre meilleur.e enquêteur.rice, décodez la malette et rendez vous sur le lieu de l'explosion 
+        afin de désamorcer la bombe.
+        <br>
+        <br>
+        Ce jeu se joue entre deux joueurs ! Le joueur 1, incarne le.la poseur.se de bombe.
+        <br>
+        Il.Elle devra donc choisir le code secret tandis que le joueur 2, incarnera l'enquêteur.ice 
+        et devra donc retrouver le code secret. </p>
+    </p>
 
-    <p>Nombre de tentatives du Joueur 2 : <strong id="nombreDeTentatives"></strong></p>
+    <p>Nombre de tentatives du Joueur 2 : <strong id="nombreDeTentatives"> 0 </strong></p>
 
+    
     <div id="gamePlay">
         <form method="get" action="">
             <label for="secretCode">Joueur 1 : Déterminez votre code secret
@@ -22,13 +35,14 @@
             <br>
             <br>
             <label for="givenNumber">Joueur 2 : Entrez le code secret compris de <span id="min">1</span> :
-                <input type="number" id="givenNumber" min="1" max="50" />
-                à <span id="max">50</span>
+                <input type="number" id="givenNumber" min="1" max="9999" />
+                à <span id="max">9999</span>
             </label>
 
             <input type="button" value="Soumettre" onclick="didIWin();">
 
         </form>
+    
     </div>
 </body>
 

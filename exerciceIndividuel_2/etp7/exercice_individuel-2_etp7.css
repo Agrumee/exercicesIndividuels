@@ -1,0 +1,60 @@
+body {
+    background-image:url(fond.jpg);
+    background-size: cover;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size : 4em;
+    color:rgb(200, 15, 15)
+}
+
+h2{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size : 3em;
+    color:rgb(138, 136, 136);
+}
+
+.Règles{
+    font-family: 'Times New Roman', Times, serif;
+    font-size : 1.6em;
+    color:rgb(226, 223, 223);
+    font-weight: bold
+}
+
+p{
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    font-size : 1.6em;
+    color:rgb(138, 136, 136);
+}
+
+strong{
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    font-size : 1.6em;
+    color:rgb(241, 4, 4);
+}
+
+span{
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    font-size : 1.6em;
+    color:rgb(255, 0, 0);
+}
+
+#gamePlay{
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    font-size : 1.6em;
+    color:rgb(255, 255, 255);
+}
+
+img {
+    display: block;
+    width : 300px;
+    height : 300px;
+    margin : auto;
+}

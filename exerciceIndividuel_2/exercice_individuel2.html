@@ -11,6 +11,7 @@
 <script>
 
 function didIWin(givenNumber){
+    givenNumber = window.prompt("Choisissez un nombre compris entre 1 et 50", "1, 2, 3... 48, 49, 50...")
     if (givenNumber == 22){
         document.body.innerHTML += "Félicitations, tu as découvert le code secret !"
     }
@@ -25,7 +26,7 @@ function didIWin(givenNumber){
 function gamePlay(){
     let givenNumber
     while(givenNumber != 22){
-    givenNumber = window.prompt("Choisissez un nombre compris entre 1 et 50", "1, 2, 3... 48, 49, 50...")
+    // givenNumber = window.prompt("Choisissez un nombre compris entre 1 et 50", "1, 2, 3... 48, 49, 50...")
     didIWin(givenNumber)
 }
 }
