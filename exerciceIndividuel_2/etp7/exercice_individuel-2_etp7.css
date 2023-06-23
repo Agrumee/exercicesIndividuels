@@ -35,14 +35,14 @@ strong{
     text-align: justify;
     font-family: 'Times New Roman', Times, serif;
     font-size : 1.6em;
-    color:rgb(241, 4, 4);
+    color:rgb(255, 255, 255);
 }
 
 span{
     text-align: justify;
     font-family: 'Times New Roman', Times, serif;
     font-size : 1.6em;
-    color:rgb(255, 0, 0);
+    color:rgb(255, 255, 255);
 }
 
 #gamePlay{

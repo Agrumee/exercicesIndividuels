@@ -30,13 +30,13 @@
     <div id="gamePlay">
         <form method="get" action="">
             <label for="secretCode">Joueur 1 : Déterminez votre code secret
-                <input type="button" value="Code Secret" onclick="chooseANumberJ1()">
+                <input name="secretCode" type="button" value="Code Secret" onclick="chooseANumberJ1()">
             </label>
             <br>
             <br>
             <label for="givenNumber">Joueur 2 : Entrez le code secret compris de <span id="min">1</span> :
-                <input type="number" id="givenNumber" min="1" max="9999" />
-                à <span id="max">9999</span>
+                <input type="number" id="givenNumber" min="1" max="50" />
+                à <span id="max">50</span>
             </label>
 
             <input type="button" value="Soumettre" onclick="didIWin();">
