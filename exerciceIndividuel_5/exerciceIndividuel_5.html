@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+
+<script js>
+
+    let tab = [3, 5, 9, 12, 1, 123]
+
+    function sum1(array) {
+        let result = 0
+        let index = 0
+        for (i = 1; i < array.length; i++) {
+            result += array[index] + array[i]
+        }
+        return result
+    }
+
+
+    // il me faut une condition d'arrêt de la fonction. 
+
+
+    // function sum2(array) {
+    //     if (i < array.length) {
+    //         result += array[i];
+    //         i++
+    //         console.log(result)
+    //         sum2(array)
+    //     }
+    //     return
+    // }
+
+    let i = 0
+    let result = 0
+
+    function sum2(array){
+        if (i == array.length){
+            return 
+        } else {
+        result += array[i];
+        i++
+        sum2(array)}
+    }
+
+    // sum2(tab)
+    // console.log(result)
+
+// le factoriel de 5 c'est le produit de tous les entiers inférieur ou égaux à 5 soit : 1x2x3x4x5
+// il faudrait une fonction qui prenne en paramètre un nombre. 
+// On devra à chaque boucle soustraire le nombre à une variable d'abord + à number puis puis soustraire 1
+
+// let n = 0
+// let resultFactoriel = 1
+
+
+// function factorielle (number){
+//     if (number == 0){
+//         return
+//     };
+//     resultFactoriel *= number
+//     factorielle(number-1)
+// }
+
+let resultFibonacci = 0
+let n = 0
+let newN = 1
+let h = 0
+
+function fibonacci (stop) {
+    if (h >= stop){
+        return
+    }
+    console.log(n)
+    resultFibonacci = n + newN
+    n = newN
+    newN = resultFibonacci
+    h++
+    newN + n
+    fibonacci(stop)
+}
+
+fibonacci(12)
+
+</script>
+
+
+
+</html>

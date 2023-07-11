@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="exerciceindividuel_4.css">
+
+<head>
+    <title>Décoder et encoder le MORSE</title>
+</head>
+
+<body>
+
+    <h1>Décoder et encoder le <strong>MORSE</strong></h1>
+
+    <p>Le <span>MORSE</span> est un système d'encodage qui attribue à chaque lettre de l'alphabet latin un code.
+        <br>
+        <br> 
+        Ce code permet alors de transmettre un texte par des impulsions, courtes ou longues, 
+        qu’elles soient produites par des signes, une lumière, un son ou un geste. 
+        
+    </p>
+
+    <div>
+        <label for="encoder"> Entrez le texte que vous souhaitez traduire en morse :
+            <input classe="champ" type="texte" id='phrase' />
+        </label>
+
+        <input type="button" value="Version" onclick="encode();">
+    </div>
+
+    <br>
+    <br>
+
+    <p id="Version"> Voici votre code : </p>
+
+    <br>
+    <br>
+
+    <div>
+        <label for="décoder"> Entrez le code en morse que vous souhaitez traduire :
+            <input classe="champ" type="texte" id='codeSecret'/>
+        </label>
+
+        <input type="button" value="Traduction" onclick="console.log(decode());">
+    </div>
+
+    <p id="Traduction"> Voici votre texte : </p>
+
+    <br>
+    <br>
+
+</body>
+
+<script src="annexe1.js"></script>
+<script src="annexe2.js"></script>
+<script src="exerciceindividuel_4.js"></script>
+
+</html>
