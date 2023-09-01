@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+
+<script js>
+
+    //ETP 1 : 
+    // function isValidDate(date) {
+    //     const dateValide = /(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})/gi;
+    //     const formatValide = /^(0[1-9]|1\d|2\d|3[01])[-\/.](0[1-9]|1[0-2])[-\/.](\d{4})$/;
+    //     return dateValide.test(date)
+    // }
+
+    // console.log(isValidDate("01.01.2001"))
+    // console.log(isValidDate("02/1/2001"))
+    // console.log(isValidDate("2/01/2001"))
+    // console.log(isValidDate("02/01/2001"))
+    // console.log(isValidDate("02/01/999"))
+    // console.log(isValidDate("02/01/9999"))
+    // console.log(isValidDate("02/01/10000"))
+
+    // ETP 2 :
+    // function isPalindrome(date) {
+    //     date = date.replaceAll("/", "")
+    //     let j = date.length
+    //     for (let i = 0; i != j; i++) {
+    //         if (date[i] != date[j]) {
+    //             return false
+    //         }
+    //         j--
+    //     }
+    //     return true
+    // }
+
+    // console.log(isPalindrome("22/02/2023"))
+    // console.log(isPalindrome("22/02/2022"))
+
+    // ETP 3 :
+
+    function isValidDate(date) {
+        const dateValide = /(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})/gi;
+        const formatValide = /^(0[1-9]|1\d|2\d|3[01])[-\/.](0[1-9]|1[0-2])[-\/.](\d{4})$/;
+        if (dateValide.test(date) == true) {
+            return formatValide.test(date)
+        } else {
+            return false
+        }
+    }
+
+    function formateDate(datejs) {
+        let dateFormat = (datejs.getDate() + "/" + (datejs.getMonth() + 1) + "/" + datejs.getFullYear())
+        if (isValidDate(dateFormat) == true) {
+            return dateFormat
+        } else {
+            dateFormat = (datejs.getDate() + "/" + "0" + (datejs.getMonth() + 1) + "/" + datejs.getFullYear())
+            if (isValidDate(dateFormat) == true) {
+                return dateFormat
+            } else {
+                dateFormat = ("0" + datejs.getDate() + "/" + (datejs.getMonth() + 1) + "/" + datejs.getFullYear())
+                if (isValidDate(dateFormat) == true) {
+                    return dateFormat
+                } else {
+                    dateFormat = ("0" + datejs.getDate() + "/" + "0" + (datejs.getMonth() + 1) + "/" + datejs.getFullYear())
+                    if (isValidDate(dateFormat) == true) {
+                        return dateFormat
+                    }
+                }
+            }
+        }
+        return "date invalide"
+    }
+
+
+    // function isPalindrome(date) {
+    //     date = date.replaceAll("/", "")
+    //     if (date[0] == date[7] && date[1] == date[6] && date[2] == date[5] && date[3] == date[4]) {
+    //         return true
+    //     } else {
+    //         return false
+    //     }
+    // }
+
+    // OU BIEN : 
+
+    function isPalindrome(date) {
+        date = date.replaceAll("/", "")
+        let j = date.length
+        for (let i = 0; i != j; i++) {
+            if (date[i] != date[j]) {
+                return false
+            }
+            j--
+        }
+        return true
+    }
+
+    let h = 0
+    var oneDay = new Date(2023, 6, 31)
+    var today = new Date()
+    var yesterday = new Date(today.setDate(today.getDate() - 1))
+
+
+    function getNextPalindromes(x) {
+        if (h == x) {
+            return
+        }
+        let dateTest = (new Date(yesterday.setDate(yesterday.getDate() + 1)))
+        yesterday = dateTest
+        isPalindrome(formateDate(dateTest))
+        if (isPalindrome(formateDate(dateTest)) == true) {
+            console.log(formateDate(dateTest))
+            h++
+        }
+        getNextPalindromes(x)
+    }
+
+    // getNextPalindromes(8)
+
+</script>
+
+</html>

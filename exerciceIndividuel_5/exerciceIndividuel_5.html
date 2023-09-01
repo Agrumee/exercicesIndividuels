@@ -7,45 +7,44 @@
 
 <script js>
 
-    let tab = [3, 5, 9, 12, 1, 123]
+    
 
-    function sum1(array) {
-        let result = 0
-        let index = 0
-        for (i = 1; i < array.length; i++) {
-            result += array[index] + array[i]
-        }
-        return result
-    }
+    // function sum1(array) {
+    //     let result = 0
+    //     let index = 0
+    //     for (i = 1; i < array.length; i++) {
+    //         result += array[index] + array[i]
+    //     }
+    //     return result
+    // }
 
 
     // il me faut une condition d'arrêt de la fonction. 
-
+    // let i = 0
+    // let result = 0
 
     // function sum2(array) {
     //     if (i < array.length) {
     //         result += array[i];
     //         i++
-    //         console.log(result)
     //         sum2(array)
     //     }
-    //     return
+    //     return result
     // }
 
-    let i = 0
-    let result = 0
 
-    function sum2(array){
-        if (i == array.length){
-            return 
-        } else {
-        result += array[i];
-        i++
-        sum2(array)}
-    }
+    // let tab = [3, 5, 9, 12, 1, 123]
 
-    // sum2(tab)
-    // console.log(result)
+    // function sum2(array, i){
+    //     if (i == array.length){
+    //         return 0
+    //     } else {
+    //         return array[i] + sum2(array, i + 1)
+    //     }
+    // }
+
+    // console.log(sum2(tab, 0))
+
 
 // le factoriel de 5 c'est le produit de tous les entiers inférieur ou égaux à 5 soit : 1x2x3x4x5
 // il faudrait une fonction qui prenne en paramètre un nombre. 
@@ -57,31 +56,66 @@
 
 // function factorielle (number){
 //     if (number == 0){
-//         return
+//         return 1
 //     };
-//     resultFactoriel *= number
-//     factorielle(number-1)
+//     return factorielle(number-1)*number
 // }
+
+// console.log(factorielle(4))
 
 let resultFibonacci = 0
 let n = 0
 let newN = 1
 let h = 0
 
+// function fibonacci (stop) {
+//     if (h >= stop+1){
+//         return
+//     }
+//     console.log(n)
+//     resultFibonacci = n + newN
+//     n = newN
+//     newN = resultFibonacci
+//     h++
+//     newN + n
+//     fibonacci(stop)
+// }
+
 function fibonacci (stop) {
-    if (h >= stop){
+    if (stop === 0){
         return
     }
     console.log(n)
     resultFibonacci = n + newN
     n = newN
     newN = resultFibonacci
-    h++
     newN + n
-    fibonacci(stop)
+    fibonacci(stop-1)
 }
 
 fibonacci(12)
+
+function fibo(n){
+    if(n === 0){
+        return 0;
+    }
+    if(n === 1){
+        return 1;
+    }
+    return fibo(n -1) + fibo(n -2)
+}
+
+console.log(fibo(12))
+
+
+function arrayLength(array){
+    if(array === []){
+        return 0
+    }
+    return arrayLength(array.pop()) + 1;
+
+}
+
 
 </script>
 

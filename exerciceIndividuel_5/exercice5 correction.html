@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+
+
+
+</body>
+
+<script js>
+
+    const num = [1, 2, 3]
+
+    function sum1(numsArray) {
+        return numsArray.reduce((total, num) => total + num)
+    }
+
+
+    function sum1(nums) {
+        let sum = 0;
+        for (let i = 0; i < nums.length; i++) {
+            sum += nums[i];
+        }
+        return sum
+    }
+
+    function sum1(nums) {
+        let sum = 0;
+        nums.forEach(num => sum += num)
+        return sum
+    }
+
+    function sum2(array, i) {
+        if (i == array.length) {
+            return 0
+        } else {
+            return array[i] + sum2(array, i + 1)
+        }
+    }
+
+    let i = 0
+    let result = 0
+    function sum2(array) {
+        if (i < array.length) {
+            result += array[i];
+            i++
+            sum2(array)
+        }
+        return result
+    }
+
+    function sum2(array2, i) {
+        if (i !== 0) {
+            let tmp = sum2(array2, i - 1)
+            console.log(tmp)
+            array2[i] += tmp
+        }
+        console.log(array2)
+        return array2[i]
+    }
+
+    function factorial(nombre) {
+        if (nombre === 0) {
+            return 1;
+        }
+        console.log(nombre)
+        return nombre * factorial(nombre - 1);
+    }
+
+</script>
+
+</html>

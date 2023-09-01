@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+
+<script js>
+
+
+    function isValidDate(date) {
+        let array = date.split("/")
+        let day = parseInt(array[0])
+        let month = array[1]
+        let year = parseInt(array[2])
+
+        if (year > '999' && year < '9999') {
+            if (month == '01' || month == '03' || month == '05' || month == '08' || month == '10' || month == '12') {
+                if (day < '01' || day > '31') {
+                    return "invalide"
+                } else {
+                    return "valide"
+                }
+            } else if (month == '04' || month == '06' || month == '07' || month == '09' || month == '11') {
+                if (day < '01' || day > '30') {
+                    return "invalide"
+                } else {
+                    return "valide"
+                }
+            } else if (month == '02') {
+                if (day < '01' || day > '28') {
+                    return "invalide"
+                } else {
+                    return "valide"
+                }
+            } else if (month < '01' || month > '12') {
+                return "invalide"
+            }
+        } else {
+            return "invalide"
+        }
+    }
+    console.log(isValidDate("1/9/2023"))
+    console.log(isValidDate("01/03/23"))
+    console.log(isValidDate("01/09/2023"))
+    console.log(isValidDate("21/01/2440"))
+
+
+
+
+    function isPalindrome(date) {
+        date = date.replaceAll("/", "")
+        console.log(date)
+        return (date[0] == date[7] && date[1] == date[6] && date[2] == date[5] && date[3] == date[4])
+    }
+
+
+    let h = 0
+    //compte les itérations
+    var today = new Date()
+    today = (today.getDate() + "/" + "0" + (today.getMonth() + 1) + "/" + today.getFullYear())
+    console.log(isPalindrome(today))
+    // console.log(ladate)
+
+    function getNextPalindromes(x) {
+        if (h == x) {
+            return
+        }
+        if (isPalindrome(today) == true) {
+            console.log(today)
+            newday = new Date(today.setDate(today.getDate() + 1))
+            h++
+            getNextPalindromes(x)
+        } else if (isPalindrome(today) == false) {
+            newday = new Date(today.setDate(today.getDate() + 1))
+            getNextPalindromes(x)
+        }
+    }
+
+    getNextPalindromes(1)
+
+
+</script>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body></body>
+
+<script js>
+
+
+    function isValidDate(date) {
+        let format = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/
+        return format.test(date)
+    }
+    console.log(isValidDate("1/9/2023"))
+    console.log(isValidDate("01/03/23"))
+    console.log(isValidDate("01/09/2023"))
+    console.log(isValidDate("32/01/2440"))
+
+    function formateDate(dateFormat) {
+        return (dateFormat.getDate() + "/" + (dateFormat.getMonth() + 1) + "/" + dateFormat.getFullYear())
+    }
+
+
+    function isPalindrome(date) {
+        date = date.replaceAll("/", "")
+        if (date[0] == date[7] && date[1] == date[6] && date[2] == date[5] && date[3] == date[4]) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    let h = 0
+    var oneDay = new Date(2023, 11, 21)
+    var today = new Date()
+    var yesterday = new Date(today.setDate(today.getDate() - 1))
+
+    console.log(isPalindrome(formateDate(oneDay)))
+
+    // function getNextPalindromes(x) {
+    //     if (h > x) {
+    //         return
+    //     }
+    //     let dateTest = (new Date(yesterday.setDate(yesterday.getDate() + 1)))
+    //     yesterday = dateTest
+    //     console.log(isPalindrome(formateDate(dateTest)))
+    //     if (isPalindrome(formateDate(dateTest)) == true){
+    //         h++}
+    //     getNextPalindromes(x)
+    // }
+
+    // console.log(getNextPalindromes(1))
+
+// pour changer le format jj/MM/AAAA en format date js, je vais créer une variable imbriquée dans new date() : cette variable sera vide 
+//mais je vais ensuite y renvoyer mes nombre. Ce qui m'embête, c'est que j'ai besoin de concaténer des nombre sans les additionner. mais en gardant leur valeur numérique.
+
+//ou aloooors : je crée une variable qui va faire evoluer la date en format js. Et une autre variable qui exploite ce format pour le renvoyer
+// dans un format analysable par ma fonction palindrome.
+
+
+
+
+
+    // let h = 0
+    // //compte les itérations
+    // var today = new Date()
+    // //today = (today.getDate() + "/" + "0" + (today.getMonth() + 1) + "/" + today.getFullYear())
+    // // console.log(ladate)
+
+
+
+
+    // console.log(formateDate(today))
+
+
+
+    // j'ai une fonction qui transforme une date en format js dans un format que ma fonction isPalindrome() doit pouvoir traiter.
+    // j'ai besoin d'une fonction qui permette de faire évoluer la date d'un jour en format js pour la transformer puis la traiter.
+    // il me faudrait une fonction qui me permette de repasser la date en format js après avoir modifié le format
+
+
+
+</script>
+
+</html>
