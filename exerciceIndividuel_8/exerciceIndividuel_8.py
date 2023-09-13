@@ -5,7 +5,8 @@ numberOfTurns = 12
 
 def randomCode():
     import random
-    code = [colors[random.randrange(len(colors))], colors[random.randrange(len(colors))], colors[random.randrange(len(colors))], colors[random.randrange(len(colors))]]
+    # code = [colors[random.randrange(len(colors))], colors[random.randrange(len(colors))], colors[random.randrange(len(colors))], colors[random.randrange(len(colors))]]
+    code = ["blue", "blue", "yellow", "green"]
     return code
 
 
